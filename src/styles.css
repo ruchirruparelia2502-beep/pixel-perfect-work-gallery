@@ -1,7 +1,5 @@
 @import "tailwindcss" source(none);
 @source "../src";
-@source "../src/screens/*.html";
-@source "../src/screens/*.txt";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -19,19 +17,6 @@
  * 1. Add the variable to :root (light value) and .dark (dark value)
  * 2. Register it in @theme inline as --color-<name>: var(--<name>)
  */
-
-@theme {
-  --color-canvas: #F6F1E5;
-  --color-canvasInner: #FDFBF7;
-  --color-cardYellow: #F8E79B;
-  --color-cardPink: #F9B7CE;
-  --color-cardGreen: #A8BC82;
-  --color-cardBlue: #A9C7E2;
-  --color-darkSidebar: #171719;
-  --color-darkActivePill: #F5A3BE;
-  --color-softPeach: #FDECEF;
-  --radius-4xl: 32px;
-}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -60,6 +45,12 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+  --color-tile-yellow: var(--tile-yellow);
+  --color-tile-pink: var(--tile-pink);
+  --color-tile-green: var(--tile-green);
+  --color-tile-blue: var(--tile-blue);
+  --shadow-shell: var(--shadow-shell);
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -76,39 +67,44 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 1.25rem;
+  --background: oklch(0.95 0.02 85);
+  --foreground: oklch(0.2 0.01 285);
+  --card: oklch(0.99 0.008 85);
+  --card-foreground: oklch(0.2 0.01 285);
+  --popover: oklch(0.99 0.008 85);
+  --popover-foreground: oklch(0.2 0.01 285);
+  --primary: oklch(0.2 0.005 285);
+  --primary-foreground: oklch(0.98 0.01 85);
+  --secondary: oklch(0.92 0.03 85);
+  --secondary-foreground: oklch(0.2 0.01 285);
+  --muted: oklch(0.92 0.02 85);
+  --muted-foreground: oklch(0.48 0.02 70);
+  --accent: oklch(0.8 0.1 355);
+  --accent-foreground: oklch(0.2 0.01 285);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
+  --border: oklch(0.88 0.025 85);
+  --input: oklch(0.88 0.025 85);
+  --ring: oklch(0.8 0.1 355);
+  --chart-1: oklch(0.92 0.1 95);
+  --chart-2: oklch(0.82 0.09 355);
+  --chart-3: oklch(0.76 0.08 125);
+  --chart-4: oklch(0.8 0.05 245);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar: oklch(0.2 0.004 285);
+  --sidebar-foreground: oklch(0.7 0.01 285);
+  --sidebar-primary: oklch(0.8 0.1 355);
+  --sidebar-primary-foreground: oklch(0.2 0.01 285);
+  --sidebar-accent: oklch(0.28 0.005 285);
+  --sidebar-accent-foreground: oklch(0.8 0.1 355);
+  --sidebar-border: oklch(0.3 0.005 285);
+  --sidebar-ring: oklch(0.8 0.1 355);
+  --tile-yellow: oklch(0.92 0.1 95);
+  --tile-pink: oklch(0.82 0.09 355);
+  --tile-green: oklch(0.76 0.08 125);
+  --tile-blue: oklch(0.8 0.05 245);
+  --shadow-shell: 0 20px 60px -15px oklch(0.3 0.03 80 / 0.2);
 }
 
 .dark {
@@ -157,5 +153,3 @@
   }
 }
 
-body { font-family: "Plus Jakarta Sans", sans-serif; background-color: #ECE5D4; color: #1A1A1E; -webkit-font-smoothing: antialiased; }
-.material-symbols-outlined { font-family: "Material Symbols Outlined"; font-weight: normal; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; direction: ltr; -webkit-font-smoothing: antialiased; }
