@@ -24,26 +24,26 @@ const obj = (v: unknown): Record<string, unknown> =>
 export function normalizeCourse(input: unknown): CourseDraft {
   const o = obj(input);
   return {
-    code: str(o.code),
-    title: str(o.title) || "Untitled course",
-    department: str(o.department),
-    semester: str(o.semester),
-    credits: str(o.credits),
-    regulation: str(o.regulation),
-    preamble: str(o.preamble),
-    prerequisites: arr(o.prerequisites).map(str).filter(Boolean),
-    outcomes: arr(o.outcomes)
+    code: str(o["code"]),
+    title: str(o["title"]) || "Untitled course",
+    department: str(o["department"]),
+    semester: str(o["semester"]),
+    credits: str(o["credits"]),
+    regulation: str(o["regulation"]),
+    preamble: str(o["preamble"]),
+    prerequisites: arr(o["prerequisites"]).map(str).filter(Boolean),
+    outcomes: arr(o["outcomes"])
       .map((x, i) => {
         const r = obj(x);
-        return { code: str(r.code) || `CO${i + 1}`, statement: str(r.statement), bloom: str(r.bloom) };
+        return { code: str(r["code"]) || `CO${i + 1}`, statement: str(r["statement"]), bloom: str(r["bloom"]) };
       })
       .filter((x) => x.statement),
-    units: arr(o.units)
+    units: arr(o["units"])
       .map((x) => {
         const r = obj(x);
-        return { title: str(r.title), topics: str(r.topics), hours: str(r.hours) };
+        return { title: str(r["title"]), topics: str(r["topics"]), hours: str(r["hours"]) };
       })
       .filter((x) => x.title || x.topics),
-    textbooks: arr(o.textbooks).map(str).filter(Boolean),
+    textbooks: arr(o["textbooks"]).map(str).filter(Boolean),
   };
 }

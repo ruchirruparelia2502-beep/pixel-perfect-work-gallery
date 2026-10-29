@@ -7,9 +7,9 @@ export type Course = CourseDraft & { id: string; source_filename: string; create
 function toCourse(row: Record<string, unknown>): Course {
   return {
     ...normalizeCourse(row),
-    id: String(row.id),
-    source_filename: String(row.source_filename ?? ""),
-    created_at: String(row.created_at ?? ""),
+    id: String(row["id"]),
+    source_filename: String(row["source_filename"] ?? ""),
+    created_at: String(row["created_at"] ?? ""),
   };
 }
 
