@@ -10,33 +10,90 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApprovalRouteImport } from './routes/approval'
+import { Route as AuditRouteImport } from './routes/audit'
+import { Route as ExportRouteImport } from './routes/export'
+import { Route as MappingRouteImport } from './routes/mapping'
+import { Route as UploadRouteImport } from './routes/upload'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApprovalRoute = ApprovalRouteImport.update({
+  id: '/approval',
+  path: '/approval',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditRoute = AuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExportRoute = ExportRouteImport.update({
+  id: '/export',
+  path: '/export',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MappingRoute = MappingRouteImport.update({
+  id: '/mapping',
+  path: '/mapping',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UploadRoute = UploadRouteImport.update({
+  id: '/upload',
+  path: '/upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/approval': typeof ApprovalRoute
+  '/audit': typeof AuditRoute
+  '/export': typeof ExportRoute
+  '/mapping': typeof MappingRoute
+  '/upload': typeof UploadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/approval': typeof ApprovalRoute
+  '/audit': typeof AuditRoute
+  '/export': typeof ExportRoute
+  '/mapping': typeof MappingRoute
+  '/upload': typeof UploadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/approval': typeof ApprovalRoute
+  '/audit': typeof AuditRoute
+  '/export': typeof ExportRoute
+  '/mapping': typeof MappingRoute
+  '/upload': typeof UploadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/approval' | '/audit' | '/export' | '/mapping' | '/upload'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/approval' | '/audit' | '/export' | '/mapping' | '/upload'
+  id:
+    | '__root__'
+    | '/'
+    | '/approval'
+    | '/audit'
+    | '/export'
+    | '/mapping'
+    | '/upload'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApprovalRoute: typeof ApprovalRoute
+  AuditRoute: typeof AuditRoute
+  ExportRoute: typeof ExportRoute
+  MappingRoute: typeof MappingRoute
+  UploadRoute: typeof UploadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +105,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/approval': {
+      id: '/approval'
+      path: '/approval'
+      fullPath: '/approval'
+      preLoaderRoute: typeof ApprovalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit': {
+      id: '/audit'
+      path: '/audit'
+      fullPath: '/audit'
+      preLoaderRoute: typeof AuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/export': {
+      id: '/export'
+      path: '/export'
+      fullPath: '/export'
+      preLoaderRoute: typeof ExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mapping': {
+      id: '/mapping'
+      path: '/mapping'
+      fullPath: '/mapping'
+      preLoaderRoute: typeof MappingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/upload': {
+      id: '/upload'
+      path: '/upload'
+      fullPath: '/upload'
+      preLoaderRoute: typeof UploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApprovalRoute: ApprovalRoute,
+  AuditRoute: AuditRoute,
+  ExportRoute: ExportRoute,
+  MappingRoute: MappingRoute,
+  UploadRoute: UploadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
