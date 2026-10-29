@@ -22,7 +22,7 @@ function CoursePage() {
   async function remove() {
     if (!confirm("Delete this course?")) return;
     const { error } = await supabase.from("courses").delete().eq("id", id);
-    if (error) return toast.error("Could not delete course.");
+    if (error) { toast.error("Could not delete course."); return; }
     await qc.invalidateQueries({ queryKey: ["courses"] });
     navigate({ to: "/dashboard" });
   }

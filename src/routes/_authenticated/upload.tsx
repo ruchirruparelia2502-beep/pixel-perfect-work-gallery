@@ -37,7 +37,7 @@ function UploadPage() {
 
   async function pick(f: File | undefined) {
     if (!f) return;
-    if (f.size > MAX) return toast.error("File is larger than 15 MB.");
+    if (f.size > MAX) { toast.error("File is larger than 15 MB."); return; }
     setFile(f);
     setDraft(null);
     setBusy("read");
@@ -62,7 +62,7 @@ function UploadPage() {
       .select("id")
       .single();
     setBusy(null);
-    if (error) return toast.error("Could not save course.");
+    if (error) { toast.error("Could not save course."); return; }
     await qc.invalidateQueries({ queryKey: ["courses"] });
     toast.success("Course saved");
     navigate({ to: "/courses/$id", params: { id: data.id } });
