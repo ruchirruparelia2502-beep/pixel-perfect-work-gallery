@@ -1,0 +1,711 @@
+<div class="p-3 md:p-6 lg:p-8 flex items-center justify-center min-h-screen">
+<!-- BEGIN: MasterDashboardWindow -->
+<div class="w-full max-w-[1540px] bg-[#F6F1E5] rounded-[38px] shadow-[0_20px_60px_-15px_rgba(40,30,10,0.18)] border border-[#E7DECD] p-4 lg:p-5 flex gap-4 lg:gap-6 overflow-hidden transition-all duration-300 relative" data-purpose="app-shell">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-[190px] xl:w-[205px] bg-[#18181A] rounded-[32px] text-zinc-400 p-4 xl:p-5 flex flex-col justify-between flex-shrink-0 shadow-lg relative" data-purpose="navigation-sidebar">
+<div>
+<div class="flex items-center justify-between pl-1 pr-1 mb-8">
+<div class="flex items-center gap-2.5"><div class="w-3 h-3 rounded-full bg-[#F5A3BE]"></div><span class="text-white text-xl font-bold tracking-tight">spec<span class="text-[#F5A3BE]">forge</span></span></div>
+<div class="w-6 h-6 rounded-full bg-[#26262B] flex items-center justify-center text-[#F5A3BE] text-xs cursor-pointer hover:bg-zinc-800 transition">
+            ‹
+          </div>
+</div>
+<div class="space-y-6"><div>
+<p class="text-[11px] font-semibold uppercase tracking-wider text-zinc-500 mb-3 px-2">Navigation</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-2xl text-zinc-400 hover:text-zinc-200 hover:bg-zinc-850 text-sm transition" href="#">
+<svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="7" rx="1.5" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1.5" width="7" x="14" y="14"></rect>
+<rect height="7" rx="1.5" width="7" x="3" y="14"></rect>
+</svg>
+Dashboard
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-2xl text-zinc-400 hover:text-zinc-200 hover:bg-zinc-850 text-sm transition group" href="#">
+<div class="flex items-center gap-3">
+<svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+Upload &amp; Ingest
+</div>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-2xl text-zinc-400 hover:text-zinc-200 hover:bg-zinc-850 text-sm transition" href="#">
+<svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+CO-PO-PSO Map
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-2xl bg-zinc-800/80 text-[#F5A3BE] font-medium text-sm transition" href="#">
+<svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+OBE Audit &amp; Checks
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-2xl text-zinc-400 hover:text-zinc-200 hover:bg-zinc-850 text-sm transition" href="#">
+<svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+Approval &amp; Governance
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-2xl text-zinc-400 hover:text-zinc-200 hover:bg-zinc-850 text-sm transition" href="#">
+<svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+Export Dossier
+</a>
+</nav>
+</div></div>
+</div>
+<div class="pt-6 border-t border-zinc-800/80">
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-400 hover:text-zinc-200 text-sm transition" href="#">
+<svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+          Sign Out
+        </a>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- BEGIN: MainContentArea -->
+<main class="flex-1 flex flex-col min-w-0 max-h-[88vh] overflow-y-auto hide-scrollbar transition-all duration-300 pr-0.5" data-purpose="primary-workspace" id="mainWorkspace"><div class="flex flex-col w-full">
+<!-- Top Navigation & Breadcrumb Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-5 px-1">
+<div class="flex items-center gap-2 text-xs font-semibold text-zinc-500">
+<span class="px-2.5 py-1 rounded-full bg-zinc-900 text-white text-[11px] font-bold">CS304</span>
+<span class="text-zinc-400">/</span>
+<span class="">Distributed Systems &amp; Cloud Architecture</span>
+<span class="text-zinc-400">/</span>
+<span class="text-zinc-800 font-bold">OBE Automated Audit</span>
+<span class="px-2 py-0.5 rounded-full bg-[#EAF2D7] text-emerald-800 text-[10px] font-extrabold uppercase tracking-wide ml-1">Tier-1 Core • Sem VI • 4.0 Credits</span>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-full bg-white/80 hover:bg-white text-zinc-700 hover:text-zinc-900 text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer" id="toggleCalendarBtn" onclick="toggleCalendarPanel()">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<span id="calendarToggleLabel" class="">Hide Calendar</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-[#18181A] hover:bg-black text-[#F5A3BE] text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer" onclick="triggerAuditRerun()">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="">Re-run OBE Audit</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-white hover:bg-zinc-100 text-zinc-800 text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer" onclick="exportAuditReport()">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+<span class="">Export Report (PDF)</span>
+</button>
+</div>
+</div>
+<!-- Page Title & Editorial Scrim Header -->
+<div class="mb-6 px-1">
+<div class="flex flex-wrap items-end justify-between gap-4">
+<div>
+<h1 class="text-2xl md:text-3xl font-extrabold text-zinc-900 tracking-tight">Automated Curriculum Verification &amp; OBE Checks</h1>
+<p class="text-xs md:text-sm text-zinc-600 mt-1 font-medium">Senate Directive 2024 Audit Engine • Real-time defect detection and AI-assisted syllabus remediations</p>
+</div>
+<div class="flex items-center gap-2 text-xs font-semibold text-zinc-500 bg-white/60 backdrop-blur-sm px-3 py-1.5 rounded-2xl shadow-2xs">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="">Engine v3.8.2 Active</span>
+<span class="text-zinc-300">•</span>
+<span class="">Checked 2 mins ago</span>
+</div>
+</div>
+</div>
+<!-- Bento Status Banner & KPI Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-6">
+<!-- Card 1: Errors (High) -->
+<div class="cursor-pointer bg-[#FDECEF] hover:bg-[#FCD8E3] transition p-4 rounded-[26px] shadow-xs flex items-center justify-between group" onclick="filterBySeverityDirect('high')">
+<div>
+<div class="flex items-center gap-1.5 text-[#C64977] text-xs font-bold uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-base">error</span>
+<span class="">High Severity</span>
+</div>
+<div class="text-2xl font-extrabold text-zinc-900">3 Errors</div>
+<p class="text-[11px] text-zinc-600 font-medium mt-0.5">Senate sign-off blocking</p>
+</div>
+<div class="w-10 h-10 rounded-2xl bg-white/80 group-hover:scale-105 transition flex items-center justify-center text-[#C64977] font-bold text-sm shadow-2xs">
+        !
+      </div>
+</div>
+<!-- Card 2: Warnings (Medium) -->
+<div class="cursor-pointer bg-[#FEF6DB] hover:bg-[#F8E79B] transition p-4 rounded-[26px] shadow-xs flex items-center justify-between group" onclick="filterBySeverityDirect('medium')">
+<div>
+<div class="flex items-center gap-1.5 text-[#9A7705] text-xs font-bold uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-base">warning</span>
+<span class="">Medium Severity</span>
+</div>
+<div class="text-2xl font-extrabold text-zinc-900">2 Warnings</div>
+<p class="text-[11px] text-zinc-600 font-medium mt-0.5">Correlation &amp; sync advisories</p>
+</div>
+<div class="w-10 h-10 rounded-2xl bg-white/80 group-hover:scale-105 transition flex items-center justify-center text-[#9A7705] font-bold text-sm shadow-2xs">
+        ⚠️
+      </div>
+</div>
+<!-- Card 3: Passed Checks -->
+<div class="cursor-pointer bg-[#EAF2D7] hover:bg-[#DDEBBD] transition p-4 rounded-[26px] shadow-xs flex items-center justify-between group" onclick="filterBySeverityDirect('passed')">
+<div>
+<div class="flex items-center gap-1.5 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="">Passed Checks</span>
+</div>
+<div class="text-2xl font-extrabold text-zinc-900">6 Checks OK</div>
+<p class="text-[11px] text-zinc-600 font-medium mt-0.5">ABET &amp; Senate compliance verified</p>
+</div>
+<div class="w-10 h-10 rounded-2xl bg-white/80 group-hover:scale-105 transition flex items-center justify-center text-emerald-700 font-bold text-sm shadow-2xs">
+        ✓
+      </div>
+</div>
+<!-- Card 4: Overall Audit Score Gauge -->
+<div class="bg-[#FAF7F0] p-4 rounded-[26px] shadow-xs flex items-center justify-between">
+<div>
+<div class="text-zinc-500 text-xs font-bold uppercase tracking-wider mb-1">Overall Audit Score</div>
+<div class="text-2xl font-extrabold text-zinc-900 flex items-baseline gap-1.5">
+<span class="">78%</span>
+<span class="text-xs font-bold text-[#C64977]">Pending 3 Fixes</span>
+</div>
+<p class="text-[11px] text-zinc-500 font-medium mt-0.5">Threshold: 85% to Senate</p>
+</div>
+<!-- Radial Progress Spark -->
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-12 h-12 transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-zinc-200" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-[#F5A3BE]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="78, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute text-[10px] font-extrabold text-zinc-900">78</span>
+</div>
+</div>
+</div>
+<!-- Filter & Search Controls Bar -->
+<div class="bg-white/70 backdrop-blur-sm rounded-[24px] p-3 shadow-xs mb-6 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 text-sm">search</span>
+<input class="w-full bg-[#FAF7F0] border-none rounded-2xl pl-10 pr-4 py-2 text-xs font-semibold text-zinc-800 placeholder-zinc-400 focus:ring-2 focus:ring-[#F5A3BE] outline-none" id="defectSearchInput" oninput="applyFilters()" placeholder="Filter defects by code, keyword, or section..." type="text">
+</div>
+<!-- Severity Filter Buttons -->
+<div class="flex flex-wrap items-center gap-1.5" id="severityFilterGroup">
+<button class="sev-btn px-3 py-1.5 rounded-full text-xs font-bold bg-zinc-900 text-white shadow-2xs cursor-pointer" data-severity="all" onclick="setSeverityFilter('all')">
+        All (11)
+      </button>
+<button class="sev-btn px-3 py-1.5 rounded-full text-xs font-bold bg-white text-zinc-700 hover:bg-zinc-100 cursor-pointer" data-severity="high" onclick="setSeverityFilter('high')">
+        High (3)
+      </button>
+<button class="sev-btn px-3 py-1.5 rounded-full text-xs font-bold bg-white text-zinc-700 hover:bg-zinc-100 cursor-pointer" data-severity="medium" onclick="setSeverityFilter('medium')">
+        Medium (2)
+      </button>
+<button class="sev-btn px-3 py-1.5 rounded-full text-xs font-bold bg-white text-zinc-700 hover:bg-zinc-100 cursor-pointer" data-severity="passed" onclick="setSeverityFilter('passed')">
+        Passed (6)
+      </button>
+</div>
+<!-- Section Filter Dropdown & AI Toggle -->
+<div class="flex items-center gap-2">
+<select class="bg-[#FAF7F0] border-none rounded-2xl px-3 py-2 text-xs font-bold text-zinc-700 outline-none cursor-pointer" id="sectionFilterSelect" onchange="applyFilters()">
+<option value="all">All Sections</option>
+<option value="sec-03">Sec 03 — Course Outcomes &amp; Bloom Rigor</option>
+<option value="sec-02">Sec 02 — Credit &amp; Hours Calculation</option>
+<option value="sec-07">Sec 07 — Bibliography &amp; Courseware</option>
+</select>
+<label class="flex items-center gap-2 text-xs font-bold text-zinc-700 bg-[#FAF7F0] px-3 py-2 rounded-2xl cursor-pointer select-none">
+<input checked="" class="rounded text-[#C64977] focus:ring-0 cursor-pointer" id="aiRemediatedToggle" onchange="applyFilters()" type="checkbox">
+<span class="truncate">AI Fixes Only</span>
+</label>
+</div>
+</div>
+<!-- DEFECTS CONTAINER (Grouped by section) -->
+<div class="space-y-6" id="defectsMasterList">
+<!-- SECTION 03: Course Outcomes & Bloom Rigor -->
+<div class="section-group" data-section-id="sec-03">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#F5A3BE]"></span>
+<h2 class="text-sm font-extrabold text-zinc-900 uppercase tracking-wider">Section 03 — Course Outcomes &amp; Bloom Rigor</h2>
+<span class="text-xs font-bold text-zinc-400 font-mono">(2 Defects Detected)</span>
+</div>
+<span class="text-xs font-semibold text-zinc-500">Bloom Threshold: Tier-1 minimum L4</span>
+</div>
+<div class="space-y-3.5">
+<!-- Defect 1 -->
+<div class="defect-row bg-white rounded-[26px] p-4 md:p-5 shadow-xs transition hover:shadow-md" data-ai="true" data-severity="high" data-text="CO_MISSING_IN_TABLE Bloom rigor understand microservices CAP L2 L4 Sec 3.2">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
+<div class="flex items-start gap-3">
+<span class="px-2.5 py-1 rounded-full bg-[#FDECEF] text-[#C64977] text-[11px] font-extrabold tracking-wide uppercase flex-shrink-0">
+                High
+              </span>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold bg-zinc-100 text-zinc-800 px-2 py-0.5 rounded-md">CO_MISSING_IN_TABLE</span>
+<span class="text-zinc-400">•</span>
+<span class="text-xs font-semibold text-zinc-500">Syllabus Source: Sec 3.2 • Course Outcomes Mapping</span>
+</div>
+<p class="text-xs md:text-sm font-bold text-zinc-900 mt-1">
+                  CO3 outcome verb "Understand" falls below mandatory Tier-1 Bloom rigor threshold (requires minimum L4 Analyze or above for Sem VI).
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 self-end md:self-start">
+<button class="px-3 py-1.5 rounded-full bg-[#FAF7F0] hover:bg-zinc-100 text-zinc-800 text-xs font-bold transition cursor-pointer" onclick="inspectDiff('CO_MISSING_IN_TABLE')">
+                Inspect Diff
+              </button>
+<button class="px-3 py-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 text-xs font-bold transition cursor-pointer" onclick="revertFix(this, 'CO_MISSING_IN_TABLE')">
+                Revert Fix
+              </button>
+<button class="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-black text-white text-xs font-bold transition shadow-xs cursor-pointer" onclick="acceptFix(this, 'CO_MISSING_IN_TABLE')">
+                Accept
+              </button>
+</div>
+</div>
+<!-- Fix Applied Callout Card -->
+<div class="bg-[#F6F9EE] rounded-2xl p-3.5 flex items-start gap-2.5">
+<span class="w-5 h-5 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center flex-shrink-0 font-bold">✓</span>
+<div class="text-xs text-zinc-800 font-medium">
+<span class="font-bold text-emerald-900">Fix Applied:</span>
+              AI upgraded verb from <span class="line-through text-zinc-500 font-mono">"Understand microservices..."</span> to
+              <span class="font-bold text-zinc-950 font-mono bg-emerald-100 px-1.5 py-0.5 rounded">"Analyze the trade-offs of microservice partitioning under CAP constraints..."</span>
+<span class="text-emerald-800 font-bold ml-1">(Promoted from L2 to L4 Analyze).</span>
+</div>
+</div>
+</div>
+<!-- Defect 2 -->
+<div class="defect-row bg-white rounded-[26px] p-4 md:p-5 shadow-xs transition hover:shadow-md" data-ai="true" data-severity="medium" data-text="CO_PO_WEAK_CORRELATION correlation strength Raft Leader Election PO3 CO1">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
+<div class="flex items-start gap-3">
+<span class="px-2.5 py-1 rounded-full bg-[#FEF6DB] text-[#9A7705] text-[11px] font-extrabold tracking-wide uppercase flex-shrink-0">
+                Medium
+              </span>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold bg-zinc-100 text-zinc-800 px-2 py-0.5 rounded-md">CO_PO_WEAK_CORRELATION</span>
+<span class="text-zinc-400">•</span>
+<span class="text-xs font-semibold text-zinc-500">Matrix Source: CO1 × PO3 • Design &amp; Development</span>
+</div>
+<p class="text-xs md:text-sm font-bold text-zinc-900 mt-1">
+                  Correlation strength 3 assigned without mandatory lab evidence hook or direct assessment link.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 self-end md:self-start">
+<button class="px-3 py-1.5 rounded-full bg-[#FAF7F0] hover:bg-zinc-100 text-zinc-800 text-xs font-bold transition cursor-pointer" onclick="inspectDiff('CO_PO_WEAK_CORRELATION')">
+                Inspect Diff
+              </button>
+<button class="px-3 py-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 text-xs font-bold transition cursor-pointer" onclick="editRationale('CO_PO_WEAK_CORRELATION')">
+                Edit Rationale
+              </button>
+<button class="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-black text-white text-xs font-bold transition shadow-xs cursor-pointer" onclick="acceptFix(this, 'CO_PO_WEAK_CORRELATION')">
+                Accept
+              </button>
+</div>
+</div>
+<!-- Fix Applied Callout Card -->
+<div class="bg-[#F6F9EE] rounded-2xl p-3.5 flex items-start gap-2.5">
+<span class="w-5 h-5 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center flex-shrink-0 font-bold">✓</span>
+<div class="text-xs text-zinc-800 font-medium">
+<span class="font-bold text-emerald-900">Fix Applied:</span>
+              Auto-linked evidence to <span class="font-mono bg-emerald-100 text-zinc-950 font-bold px-1.5 py-0.5 rounded">"Lab Exercise 4 (Raft Leader Election)"</span> and reduced correlation divergence flag to acceptable parity.
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 02: Credit & Hours Calculation -->
+<div class="section-group" data-section-id="sec-02">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#A9C7E2]"></span>
+<h2 class="text-sm font-extrabold text-zinc-900 uppercase tracking-wider">Section 02 — Credit &amp; Hours Calculation</h2>
+<span class="text-xs font-bold text-zinc-400 font-mono">(1 Defect Detected)</span>
+</div>
+<span class="text-xs font-semibold text-zinc-500">Senate Standard: Formula R22</span>
+</div>
+<div class="space-y-3.5">
+<!-- Defect 3 -->
+<div class="defect-row bg-white rounded-[26px] p-4 md:p-5 shadow-xs transition hover:shadow-md" data-ai="true" data-severity="high" data-text="CREDIT_HOUR_MISMATCH 4.0 credits 45L 20P 30 Practical hours parity Sec 2.1">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
+<div class="flex items-start gap-3">
+<span class="px-2.5 py-1 rounded-full bg-[#FDECEF] text-[#C64977] text-[11px] font-extrabold tracking-wide uppercase flex-shrink-0">
+                High
+              </span>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold bg-zinc-100 text-zinc-800 px-2 py-0.5 rounded-md">CREDIT_HOUR_MISMATCH</span>
+<span class="text-zinc-400">•</span>
+<span class="text-xs font-semibold text-zinc-500">Academic Specs: Sec 2.1 • Lecture &amp; Lab Hour Parity</span>
+</div>
+<p class="text-xs md:text-sm font-bold text-zinc-900 mt-1">
+                  Declared 4.0 credits with 45L + 20P hours violates Senate standard requiring 30 Practical hours for 1 laboratory credit.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 self-end md:self-start">
+<button class="px-3 py-1.5 rounded-full bg-[#FAF7F0] hover:bg-zinc-100 text-zinc-800 text-xs font-bold transition cursor-pointer" onclick="inspectDiff('CREDIT_HOUR_MISMATCH')">
+                Inspect Diff
+              </button>
+<button class="px-3 py-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 text-xs font-bold transition cursor-pointer" onclick="reviewSchedule('CREDIT_HOUR_MISMATCH')">
+                Review Schedule
+              </button>
+<button class="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-black text-white text-xs font-bold transition shadow-xs cursor-pointer" onclick="acceptFix(this, 'CREDIT_HOUR_MISMATCH')">
+                Accept
+              </button>
+</div>
+</div>
+<!-- Fix Applied Callout Card -->
+<div class="bg-[#F6F9EE] rounded-2xl p-3.5 flex items-start gap-2.5">
+<span class="w-5 h-5 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center flex-shrink-0 font-bold">✓</span>
+<div class="text-xs text-zinc-800 font-medium">
+<span class="font-bold text-emerald-900">Fix Applied:</span>
+              Recalculated contact distribution to <span class="font-mono bg-emerald-100 text-zinc-950 font-bold px-1.5 py-0.5 rounded">45 Lecture + 30 Practical hours (75 Total Hours)</span> matching institutional Credit Formula R22.
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 07: Bibliography & Courseware -->
+<div class="section-group" data-section-id="sec-07">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#F8E79B]"></span>
+<h2 class="text-sm font-extrabold text-zinc-900 uppercase tracking-wider">Section 07 — Bibliography &amp; Courseware</h2>
+<span class="text-xs font-bold text-zinc-400 font-mono">(2 Defects Detected)</span>
+</div>
+<span class="text-xs font-semibold text-zinc-500">Recency Window: 5 Academic Years</span>
+</div>
+<div class="space-y-3.5">
+<!-- Defect 4 -->
+<div class="defect-row bg-white rounded-[26px] p-4 md:p-5 shadow-xs transition hover:shadow-md" data-ai="true" data-severity="high" data-text="DEPRECATED_BIBLIO_EDITION Tanenbaum Van Steen 2007 4th Edition Kleppmann References">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
+<div class="flex items-start gap-3">
+<span class="px-2.5 py-1 rounded-full bg-[#FDECEF] text-[#C64977] text-[11px] font-extrabold tracking-wide uppercase flex-shrink-0">
+                High
+              </span>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold bg-zinc-100 text-zinc-800 px-2 py-0.5 rounded-md">DEPRECATED_BIBLIO_EDITION</span>
+<span class="text-zinc-400">•</span>
+<span class="text-xs font-semibold text-zinc-500">References: Item #2 • Prescribed Textbook</span>
+</div>
+<p class="text-xs md:text-sm font-bold text-zinc-900 mt-1">
+                  Prescribed textbook "Distributed Systems" lists Tanenbaum &amp; Van Steen 2nd Edition (2007), which exceeds the 5-year curriculum recency window.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 self-end md:self-start">
+<button class="px-3 py-1.5 rounded-full bg-[#FAF7F0] hover:bg-zinc-100 text-zinc-800 text-xs font-bold transition cursor-pointer" onclick="inspectDiff('DEPRECATED_BIBLIO_EDITION')">
+                Inspect Diff
+              </button>
+<button class="px-3 py-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-600 text-xs font-bold transition cursor-pointer" onclick="revertFix(this, 'DEPRECATED_BIBLIO_EDITION')">
+                Keep Original
+              </button>
+<button class="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-black text-white text-xs font-bold transition shadow-xs cursor-pointer" onclick="acceptFix(this, 'DEPRECATED_BIBLIO_EDITION')">
+                Accept
+              </button>
+</div>
+</div>
+<!-- Fix Applied Callout Card -->
+<div class="bg-[#F6F9EE] rounded-2xl p-3.5 flex items-start gap-2.5">
+<span class="w-5 h-5 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center flex-shrink-0 font-bold">✓</span>
+<div class="text-xs text-zinc-800 font-medium">
+<span class="font-bold text-emerald-900">Fix Applied:</span>
+              Substituted with <span class="font-mono bg-emerald-100 text-zinc-950 font-bold px-1.5 py-0.5 rounded">Tanenbaum &amp; Van Steen 4th Edition (2023)</span> and added supplementary text <span class="font-bold">Kleppmann: Designing Data-Intensive Applications (2023 revision)</span>.
+            </div>
+</div>
+</div>
+<!-- Defect 5 -->
+<div class="defect-row bg-white rounded-[26px] p-4 md:p-5 shadow-xs transition hover:shadow-md" data-ai="true" data-severity="medium" data-text="PREREQ_CURRICULUM_OUT_OF_SYNC CS202 Computer Networks sockets Unit I Prerequisites">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
+<div class="flex items-start gap-3">
+<span class="px-2.5 py-1 rounded-full bg-[#FEF6DB] text-[#9A7705] text-[11px] font-extrabold tracking-wide uppercase flex-shrink-0">
+                Medium
+              </span>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs font-bold bg-zinc-100 text-zinc-800 px-2 py-0.5 rounded-md">PREREQ_CURRICULUM_OUT_OF_SYNC</span>
+<span class="text-zinc-400">•</span>
+<span class="text-xs font-semibold text-zinc-500">Prerequisites: Sec 1.3 • Dependency Graph</span>
+</div>
+<p class="text-xs md:text-sm font-bold text-zinc-900 mt-1">
+                  Prerequisite course "CS202: Computer Networks" updated its syllabus with new topic codes not yet reflected in this syllabus module list.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 self-end md:self-start">
+<button class="px-3 py-1.5 rounded-full bg-[#FAF7F0] hover:bg-zinc-100 text-zinc-800 text-xs font-bold transition cursor-pointer" onclick="inspectDiff('PREREQ_CURRICULUM_OUT_OF_SYNC')">
+                Inspect Dependency
+              </button>
+<button class="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-black text-white text-xs font-bold transition shadow-xs cursor-pointer" onclick="acceptFix(this, 'PREREQ_CURRICULUM_OUT_OF_SYNC')">
+                Accept
+              </button>
+</div>
+</div>
+<!-- Fix Applied Callout Card -->
+<div class="bg-[#F6F9EE] rounded-2xl p-3.5 flex items-start gap-2.5">
+<span class="w-5 h-5 rounded-full bg-emerald-600 text-white text-xs flex items-center justify-center flex-shrink-0 font-bold">✓</span>
+<div class="text-xs text-zinc-800 font-medium">
+<span class="font-bold text-emerald-900">Fix Applied:</span>
+              Updated prerequisite mapping to link <span class="font-mono bg-emerald-100 text-zinc-950 font-bold px-1.5 py-0.5 rounded">CS202.3 (Transport Layer Sockets)</span> directly with Unit I Distributed Fundamentals.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COLLAPSIBLE PASSED CHECKS SECTION -->
+<div class="mt-8" id="passedChecksContainer">
+<div class="bg-[#EAF2D7] hover:bg-[#DDEBBD] cursor-pointer rounded-[26px] p-4 md:p-5 shadow-xs flex items-center justify-between transition select-none" onclick="togglePassedAccordion()">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-sm shadow-2xs">✓</span>
+<div>
+<h3 class="text-sm md:text-base font-extrabold text-emerald-950">Passed Verification Checks</h3>
+<p class="text-xs text-emerald-800 font-medium">6 of 11 Quality checks passed without warnings</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-full bg-white/70 text-emerald-900 text-xs font-bold">6 Verified</span>
+<span class="material-symbols-outlined text-emerald-900 text-xl transition-transform duration-300" id="accordionChevron">expand_more</span>
+</div>
+</div>
+<!-- Accordion Content -->
+<div class="hidden mt-3 space-y-2.5 transition-all" id="passedChecksContent">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="bg-white rounded-2xl p-4 shadow-xs flex items-start gap-3">
+<span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+<div>
+<span class="font-mono text-[11px] font-bold bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded">BLOOM_DISTRIBUTION_BALANCED</span>
+<p class="text-xs font-bold text-zinc-900 mt-1">Bloom taxonomy distribution satisfies ABET Criterion 3.</p>
+<p class="text-[11px] text-zinc-500 mt-0.5">30% L4, 40% L5, 30% L6 across 5 units.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-4 shadow-xs flex items-start gap-3">
+<span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+<div>
+<span class="font-mono text-[11px] font-bold bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded">EXAM_BLUEPRINT_COVERAGE</span>
+<p class="text-xs font-bold text-zinc-900 mt-1">All 5 COs mapped across Mid-Term and Final examination blueprints.</p>
+<p class="text-[11px] text-zinc-500 mt-0.5">Continuous assessment weight formula holds 40:60 split.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-4 shadow-xs flex items-start gap-3">
+<span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+<div>
+<span class="font-mono text-[11px] font-bold bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded">LAB_SAFETY_DECLARATION</span>
+<p class="text-xs font-bold text-zinc-900 mt-1">Cloud sandbox and emulator resource quotas validated.</p>
+<p class="text-[11px] text-zinc-500 mt-0.5">Kubernetes namespace policies compliant with IT Governance #9.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-4 shadow-xs flex items-start gap-3">
+<span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+<div>
+<span class="font-mono text-[11px] font-bold bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded">TEACHING_METHOD_COMPLIANCE</span>
+<p class="text-xs font-bold text-zinc-900 mt-1">Active learning and flipped classroom allocated 30% time.</p>
+<p class="text-[11px] text-zinc-500 mt-0.5">Exceeds minimum 20% institutional active pedagogy mandate.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-4 shadow-xs flex items-start gap-3">
+<span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+<div>
+<span class="font-mono text-[11px] font-bold bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded">FACULTY_QUALIFICATION_HOOK</span>
+<p class="text-xs font-bold text-zinc-900 mt-1">Course lead matches departmental primary research cluster.</p>
+<p class="text-[11px] text-zinc-500 mt-0.5">Dr. Olivia Vance • Cloud Systems &amp; Consensus Lead.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-4 shadow-xs flex items-start gap-3">
+<span class="text-emerald-600 font-bold text-base mt-0.5">✓</span>
+<div>
+<span class="font-mono text-[11px] font-bold bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded">TOTAL_UNITS_STRUCTURE</span>
+<p class="text-xs font-bold text-zinc-900 mt-1">5 syllabus units mapped to exactly 15 teaching weeks.</p>
+<p class="text-[11px] text-zinc-500 mt-0.5">Institutional calendar synchronization 100% matched.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Diff Modal / Drawer -->
+<div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden items-center justify-center p-4" id="diffInspectionModal">
+<div class="bg-[#FAF7F0] w-full max-w-2xl rounded-[32px] p-6 shadow-2xl text-zinc-900 relative">
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-black/10">
+<div>
+<span class="font-mono text-xs font-bold bg-zinc-200 px-2 py-0.5 rounded" id="diffModalCode">CO_MISSING_IN_TABLE</span>
+<h3 class="text-base font-extrabold mt-1" id="diffModalTitle">Syllabus Diff Inspection</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-zinc-600 hover:bg-zinc-200 text-sm font-bold cursor-pointer" onclick="closeDiffModal()">✕</button>
+</div>
+<div class="space-y-3 font-mono text-xs">
+<div class="bg-[#FDECEF] p-3.5 rounded-2xl text-rose-950">
+<div class="font-sans font-bold text-[11px] text-rose-800 uppercase tracking-wider mb-1">- Original Course Draft</div>
+<p id="diffOriginalText" class="">CO3: Understand microservices architecture and cloud state synchronization patterns.</p>
+</div>
+<div class="bg-[#EAF2D7] p-3.5 rounded-2xl text-emerald-950">
+<div class="font-sans font-bold text-[11px] text-emerald-800 uppercase tracking-wider mb-1">+ Remediation Applied by AI Engine</div>
+<p id="diffRemediatedText" class="">CO3: Analyze the trade-offs of microservice partitioning under CAP constraints and distributed consensus protocols.</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6 pt-4 border-t border-black/10">
+<span class="text-xs text-zinc-500 font-medium">Senate Compliance Rule: 2024-Bloom-L4-Min</span>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-full bg-white text-zinc-800 text-xs font-bold hover:bg-zinc-100 transition cursor-pointer" onclick="closeDiffModal()">Close</button>
+<button class="px-4 py-2 rounded-full bg-zinc-900 text-white text-xs font-bold hover:bg-black transition cursor-pointer" onclick="confirmModalDiffAccept()">Accept Remediation</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client Interaction Controller -->
+</main>
+<!-- END: MainContentArea -->
+<!-- BEGIN: RightPanelCalendarAndTimeline (Compact & Auto-Contracting) -->
+<aside class="w-[230px] xl:w-[245px] bg-[#FAF7F0] rounded-[28px] p-3 xl:p-3.5 flex flex-col justify-between flex-shrink-0 border border-[#E9E1CE] shadow-xs text-zinc-800 transition-all duration-300" data-purpose="calendar-and-schedule" id="calendar-sidebar">
+<div>
+<!-- Header -->
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-1">
+<button class="text-zinc-400 hover:text-zinc-800 text-xs p-0.5 cursor-pointer leading-none">‹</button>
+<span class="px-2 py-0.5 rounded-full bg-[#FCD8E3] text-[#A62758] font-bold text-[11px] tracking-tight">May 2024</span>
+<button class="text-zinc-400 hover:text-zinc-800 text-xs p-0.5 cursor-pointer leading-none">›</button>
+</div>
+<button class="w-6 h-6 rounded-full bg-white border border-[#E5DECD] text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 flex items-center justify-center transition shadow-2xs cursor-pointer" onclick="toggleCalendarPanel()" title="Collapse Calendar Panel">
+<svg class="w-3 h-3 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+<!-- Day Labels -->
+<div class="grid grid-cols-7 text-center text-[9px] font-extrabold text-zinc-400 mb-1 tracking-tight">
+<span class="">MO</span>
+<span class="">TU</span>
+<span class="">WE</span>
+<span class="">TH</span>
+<span class="">FR</span>
+<span class="">SA</span>
+<span class="">SU</span>
+</div>
+<!-- Compact Calendar Grid -->
+<div class="grid grid-cols-7 text-center text-[11px] font-semibold text-zinc-700 gap-y-1">
+<span class="text-zinc-300 font-normal">29</span>
+<span class="text-zinc-300 font-normal">30</span>
+<span class="">1</span>
+<span class="">2</span>
+<span class="">3</span>
+<span class="">4</span>
+<span class="">5</span>
+<span class="">6</span>
+<span class="">7</span>
+<span class="">8</span>
+<span class="">9</span>
+<span class="">10</span>
+<span class="">11</span>
+<span class="">12</span>
+<span class="">13</span>
+<span class="">14</span>
+<div class="flex items-center justify-center">
+<span class="w-5.5 h-5.5 rounded-full bg-[#F5A3BE] text-zinc-950 font-extrabold flex items-center justify-center shadow-xs text-[10px]">
+        15
+      </span>
+</div>
+<span class="">16</span>
+<span class="">17</span>
+<span class="">18</span>
+<span class="">19</span>
+<span class="">20</span>
+<span class="">21</span>
+<span class="">22</span>
+<span class="">23</span>
+<span class="">24</span>
+<span class="">25</span>
+<span class="">26</span>
+<span class="">27</span>
+<span class="">28</span>
+<span class="">29</span>
+<span class="">30</span>
+<span class="">31</span>
+<span class="text-zinc-300 font-normal">1</span>
+<span class="text-zinc-300 font-normal">2</span>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-1.5 mt-3">
+<button class="flex-1 bg-zinc-900 hover:bg-zinc-800 text-white rounded-full py-1.5 px-2 text-[11px] font-bold flex items-center justify-center gap-1 transition shadow-xs cursor-pointer">
+<span class="text-xs leading-none">+</span> Add Milestone
+    </button>
+<button class="w-7 h-7 rounded-full bg-white border border-[#E5DECD] flex items-center justify-center text-zinc-600 hover:bg-zinc-100 transition shadow-2xs cursor-pointer" title="Refresh">
+<svg class="w-3 h-3 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="w-7 h-7 rounded-full bg-white border border-[#E5DECD] flex items-center justify-center text-zinc-600 hover:bg-zinc-100 transition shadow-2xs cursor-pointer" title="Notes">
+<svg class="w-3 h-3 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Milestones Section (Dense & Compact) -->
+<div class="mt-3.5 pt-3 border-t border-[#EAE3D2]">
+<div class="flex items-center justify-between mb-2">
+<div>
+<h4 class="text-[11px] font-extrabold text-zinc-900 leading-tight">May 15</h4>
+<span class="text-[9px] text-zinc-500 font-medium">Curriculum Milestones</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-zinc-900 text-white text-[9px] font-bold flex items-center gap-0.5">
+      All <span class="text-[7px]">▾</span>
+</span>
+</div>
+<div class="space-y-2 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[1.5px] before:border-l before:border-dashed before:border-zinc-300">
+<!-- Item 1 -->
+<div class="flex items-start gap-2 relative">
+<div class="w-6 h-6 rounded-full bg-[#FBD6E2] text-[#B83768] flex items-center justify-center flex-shrink-0 z-10 shadow-2xs">
+<svg class="w-3 h-3 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="bg-white/80 p-2 rounded-xl flex-1 border border-[#EFE8D9] min-w-0">
+<div class="flex items-center justify-between">
+<h5 class="text-[11px] font-bold text-zinc-900 truncate">OBE Automated Audit</h5>
+<span class="text-[8px] font-semibold text-zinc-500 flex-shrink-0 ml-1">07:00</span>
+</div>
+<p class="text-[9px] text-zinc-600 truncate">Senate QA • Rm 302</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-2 relative">
+<div class="w-6 h-6 rounded-full bg-[#D7E6F5] text-[#2F6497] flex items-center justify-center flex-shrink-0 z-10 shadow-2xs">
+<svg class="w-3 h-3 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="bg-white/80 p-2 rounded-xl flex-1 border border-[#EFE8D9] min-w-0">
+<div class="flex items-center justify-between">
+<h5 class="text-[11px] font-bold text-zinc-900 truncate">Peer Review: Raft Proof</h5>
+<span class="text-[8px] font-semibold text-zinc-500 flex-shrink-0 ml-1">08:00</span>
+</div>
+<p class="text-[9px] text-zinc-600 truncate">Dr. Vance • CS Lab</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-2 relative">
+<div class="w-6 h-6 rounded-full bg-[#FCECB5] text-[#8C6906] flex items-center justify-center flex-shrink-0 z-10 ring-2 ring-[#F5A3BE] shadow-xs">
+<svg class="w-3 h-3 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="bg-white p-2 rounded-xl flex-1 border-2 border-[#F8C1D3] shadow-xs min-w-0">
+<div class="flex items-center justify-between">
+<h5 class="text-[11px] font-bold text-zinc-900 truncate">Curriculum Board Signoff</h5>
+<span class="text-[8px] font-bold text-[#A62758] flex-shrink-0 ml-1">NOW</span>
+</div>
+<p class="text-[9px] text-zinc-600 truncate">West Campus, Rm 200</p>
+<div class="flex items-center gap-1 mt-1.5">
+<span class="w-4 h-4 rounded-full bg-[#E5EEF8] text-[7px] font-extrabold text-sky-800 flex items-center justify-center">TY</span>
+<span class="w-4 h-4 rounded-full bg-[#FCE8E6] text-[7px] font-extrabold text-rose-800 flex items-center justify-center">AR</span>
+<span class="w-4 h-4 rounded-full bg-[#EAF2D7] text-[7px] font-extrabold text-emerald-800 flex items-center justify-center">NV</span>
+<span class="w-4 h-4 rounded-full bg-zinc-200 text-[7px] font-extrabold text-zinc-700 flex items-center justify-center">+4</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full bg-zinc-900 hover:bg-black text-white rounded-full py-1.5 text-[11px] font-bold mt-2.5 transition shadow-xs cursor-pointer">
+      View full agenda
+    </button>
+</div>
+</aside>
+<!-- END: RightPanelCalendarAndTimeline -->
+</div>
+<!-- END: MasterDashboardWindow -->
+<!-- Vanilla JavaScript for Bento Box Interactions & Auto-Contracting Scroll Behavior -->
+
+<!-- Toast Notification Container --><div class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none" id="toastContainer"></div><!-- AI Provider Settings Modal --><div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden items-center justify-center p-4" id="aiSettingsModal"><div class="bg-[#FAF7F0] border border-[#E7DECD] w-full max-w-md rounded-[32px] p-6 shadow-2xl text-zinc-800 relative"><div class="flex items-center justify-between pb-3 border-b border-black/10"><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-[#18181A] flex items-center justify-center text-[#F5A3BE] text-sm"><svg class="w-4 h-4 stroke-current" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div><div><h3 class="text-sm font-bold text-zinc-900">AI Provider Configuration</h3><p class="text-[11px] text-zinc-500 font-medium">OBE Syllabus Validator &amp; Bloom Analyzer</p></div></div><button class="w-7 h-7 rounded-full bg-white border border-[#E4DCBA] flex items-center justify-center text-zinc-600 hover:bg-zinc-200 transition text-sm cursor-pointer" id="closeSettingsBtn">✕</button></div><div class="space-y-4 mt-4"><div><label class="block text-xs font-bold text-zinc-700 mb-1.5">Provider Selection</label><select class="w-full bg-white border border-[#E5DECD] rounded-2xl px-3 py-2 text-xs font-semibold text-zinc-800 outline-none" id="aiProviderSelect"><option value="anthropic">Anthropic Claude 3.5 Sonnet</option><option value="openai">OpenAI GPT-4o Curriculum Engine</option><option value="specforge-local">SpecForge Academic Local Llama</option></select></div><div><label class="block text-xs font-bold text-zinc-700 mb-1.5">API Secret Key</label><div class="relative flex items-center"><input class="w-full bg-white border border-[#E5DECD] rounded-2xl px-3 py-2 pr-10 text-xs font-mono text-zinc-800 outline-none" id="aiApiKeyInput" placeholder="Enter API key..." type="password" value="sk-ant-api03-specforge-9942"><button class="absolute right-3 text-zinc-400 hover:text-zinc-700 text-xs font-bold select-none cursor-pointer" id="toggleApiKeyVisibility">Show</button></div><p class="text-[10px] text-zinc-500 mt-1">Keys are securely verified in browser memory only.</p></div><div class="p-3 rounded-2xl bg-[#EAF2D7] border border-[#A8BC82]/40 text-emerald-900 flex items-center justify-between text-xs font-bold" id="keyStatusBanner"><span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-600"></span><span class="" id="keyStatusText">Status: Verified &amp; Active</span></span><span class="text-[10px] uppercase tracking-wider text-emerald-800 font-extrabold">Latency: 48ms</span></div></div><div class="flex items-center justify-between pt-4 mt-4 border-t border-black/10"><button class="px-3 py-1.5 rounded-full bg-white border border-[#E5DECD] text-zinc-700 hover:bg-zinc-100 text-xs font-semibold transition cursor-pointer" id="clearKeyBtn">Clear Key</button><div class="flex items-center gap-2"><button class="px-3.5 py-1.5 rounded-full bg-[#18181A] hover:bg-black text-[#F5A3BE] text-xs font-bold transition cursor-pointer" id="testKeyBtn">Test Connection</button><button class="px-4 py-1.5 rounded-full bg-[#C64977] hover:bg-[#861E44] text-white text-xs font-bold transition cursor-pointer" id="saveSettingsBtn">Save</button></div></div></div></div><!-- Add Outcome / Event Modal --><div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden items-center justify-center p-4" id="addEventModal"><div class="bg-[#FAF7F0] border border-[#E7DECD] w-full max-w-md rounded-[32px] p-6 shadow-2xl text-zinc-800 relative"><div class="flex items-center justify-between pb-3 border-b border-black/10"><h3 class="text-sm font-bold text-zinc-900">Add Curriculum Milestone / Event</h3><button class="w-7 h-7 rounded-full bg-white border border-[#E4DCBA] flex items-center justify-center text-zinc-600 hover:bg-zinc-200 transition text-sm cursor-pointer" id="closeAddEventBtn">✕</button></div><div class="space-y-3 mt-4"><div><label class="block text-xs font-bold text-zinc-700 mb-1">Event / Milestone Title</label><input class="w-full bg-white border border-[#E5DECD] rounded-2xl px-3 py-2 text-xs font-semibold text-zinc-800 outline-none" id="newEventTitle" placeholder="e.g., ABET Midterm Review Signoff" type="text"></div><div class="grid grid-cols-2 gap-2"><div><label class="block text-xs font-bold text-zinc-700 mb-1">Date</label><input class="w-full bg-white border border-[#E5DECD] rounded-2xl px-3 py-2 text-xs font-medium text-zinc-800 outline-none" id="newEventDate" type="date" value="2024-05-18"></div><div><label class="block text-xs font-bold text-zinc-700 mb-1">Time</label><input class="w-full bg-white border border-[#E5DECD] rounded-2xl px-3 py-2 text-xs font-medium text-zinc-800 outline-none" id="newEventTime" type="text" value="10:30 AM"></div></div><div><label class="block text-xs font-bold text-zinc-700 mb-1">Venue / Department</label><input class="w-full bg-white border border-[#E5DECD] rounded-2xl px-3 py-2 text-xs font-medium text-zinc-800 outline-none" id="newEventVenue" placeholder="e.g., Room 402 • Faculty Council" type="text"></div><div><label class="block text-xs font-bold text-zinc-700 mb-1">Milestone Type</label><select class="w-full bg-white border border-[#E5DECD] rounded-2xl px-3 py-2 text-xs font-semibold text-zinc-800 outline-none" id="newEventType"><option value="audit">OBE Automated Audit</option><option value="peer">Faculty Peer Review</option><option value="board">Senate Curriculum Signoff</option></select></div></div><div class="flex items-center justify-end gap-2 pt-4 mt-4 border-t border-black/10"><button class="px-3.5 py-1.5 rounded-full bg-white border border-[#E5DECD] text-zinc-700 hover:bg-zinc-100 text-xs font-semibold transition cursor-pointer" id="cancelAddEventBtn">Cancel</button><button class="px-4 py-1.5 rounded-full bg-zinc-900 hover:bg-black text-white text-xs font-bold transition cursor-pointer" id="confirmAddEventBtn">Create Milestone</button></div></div></div>
+
+</div>

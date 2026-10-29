@@ -1,0 +1,101 @@
+{
+/* Toast Dispatcher */function showToast(message, type = 'info') { const container = document.getElementById('toastContainer'); if (!container) return; const toast = document.createElement('div'); toast.className = 'pointer-events-auto flex items-center gap-2.5 px-4 py-2.5 rounded-2xl shadow-lg border text-xs font-semibold transition-all duration-300 transform translate-y-2 opacity-0 ' + (type === 'success' ? 'bg-[#18181A] text-white border-zinc-700' : type === 'warn' ? 'bg-amber-100 text-amber-900 border-amber-300' : 'bg-[#FAF7F0] text-zinc-900 border-[#E5DECD]'); toast.innerHTML = '<span class="w-2 h-2 rounded-full ' + (type === 'success' ? 'bg-[#F5A3BE]' : type === 'warn' ? 'bg-amber-600' : 'bg-emerald-600') + '"></span><span>' + message + '</span>'; container.appendChild(toast); requestAnimationFrame(() => { toast.classList.remove('translate-y-2', 'opacity-0'); }); setTimeout(() => { toast.classList.add('opacity-0', 'translate-y-2'); setTimeout(() => toast.remove(), 300); }, 3200); }/* Calendar Collapse & Expand */window.toggleCalendar = function() { const aside = document.getElementById('calendar-sidebar'); const label = document.getElementById('toggleCalendarLabel'); const toggleBtn = document.getElementById('hide-calendar-btn'); if (!aside) return; const isHidden = aside.classList.contains('hidden') || aside.style.display === 'none'; if (isHidden) { aside.classList.remove('hidden'); aside.style.display = ''; if (label) label.textContent = 'Hide Calendar'; if (toggleBtn) { toggleBtn.classList.remove('bg-zinc-900', 'text-white'); toggleBtn.classList.add('bg-white/80', 'text-zinc-800'); toggleBtn.setAttribute('title', 'Hide Calendar Schedule'); } showToast('Calendar schedule pane opened', 'info'); } else { aside.classList.add('hidden'); aside.style.display = 'none'; if (label) label.textContent = 'Show Calendar'; if (toggleBtn) { toggleBtn.classList.add('bg-zinc-900', 'text-white'); toggleBtn.classList.remove('bg-white/80', 'text-zinc-800'); toggleBtn.setAttribute('title', 'Show Calendar Schedule'); } showToast('Calendar hidden: full-width workspace mode', 'info'); } };/* Sidebar Nav Links Interaction */document.querySelectorAll('aside nav a').forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); const text = this.textContent.trim(); document.querySelectorAll('aside nav a').forEach(el => { el.classList.remove('bg-zinc-800/80', 'text-[#F5A3BE]', 'font-medium'); el.classList.add('text-zinc-400'); }); this.classList.remove('text-zinc-400'); this.classList.add('bg-zinc-800/80', 'text-[#F5A3BE]', 'font-medium'); showToast('Switched to: ' + text, 'info'); }); });/* Sign Out Action */const signOutBtn = document.querySelector('aside .border-t a'); if (signOutBtn) { signOutBtn.addEventListener('click', (e) => { e.preventDefault(); showToast('Session locked. Signing out...', 'warn'); }); }/* Search Filter Chips */document.querySelectorAll('header .max-w-2xl span.rounded-full').forEach(chip => { chip.addEventListener('click', function() { document.querySelectorAll('header .max-w-2xl span.rounded-full').forEach(c => { c.classList.remove('bg-[#18181A]', 'text-white'); c.classList.add('bg-zinc-200/70', 'text-zinc-700'); }); this.classList.remove('bg-zinc-200/70', 'text-zinc-700'); this.classList.add('bg-[#18181A]', 'text-white'); showToast('Search filter applied: ' + this.textContent.trim(), 'info'); }); });/* Search Input Feedback */const searchInput = document.querySelector('header input[type="text"]'); if (searchInput) { searchInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { showToast('Searching course syllabus for "' + searchInput.value + '"...', 'info'); } }); }/* Topbar Quick Action Buttons */document.querySelectorAll('header button').forEach(btn => { if (btn.id !== 'hide-calendar-btn') { btn.addEventListener('click', () => { showToast('Quick action triggered', 'info'); }); } });/* File Upload Toggling & Drag-Drop */window.toggleSpecFile = function() { const preview = document.getElementById('specFilePreview'); const dropZone = document.getElementById('specDropZone'); if (!preview || !dropZone) return; if (preview.classList.contains('hidden')) { preview.classList.remove('hidden'); dropZone.classList.add('hidden'); showToast('Course syllabus restored', 'info'); } else { preview.classList.add('hidden'); dropZone.classList.remove('hidden'); showToast('Syllabus removed. Drop a new file.', 'warn'); } };window.toggleBlueprintFile = function() { const preview = document.getElementById('blueprintFilePreview'); const dropZone = document.getElementById('blueprintDropZone'); if (!preview || !dropZone) return; if (preview.classList.contains('hidden')) { preview.classList.remove('hidden'); dropZone.classList.add('hidden'); showToast('Question blueprint restored', 'info'); } else { preview.classList.add('hidden'); dropZone.classList.remove('hidden'); showToast('Blueprint removed. Drop optional file.', 'warn'); } };const specZone = document.getElementById('specDropZone'); if (specZone) { specZone.addEventListener('click', () => { window.toggleSpecFile(); }); }const bpZone = document.getElementById('blueprintDropZone'); if (bpZone) { bpZone.addEventListener('click', () => { window.toggleBlueprintFile(); }); }/* Multi-Step Pipeline Generator Sim */let isPipelineRunning = false; window.togglePipelineSim = function() { if (isPipelineRunning) return; isPipelineRunning = true; const stepper = document.getElementById('pipelineStepperSection'); const cards = stepper ? stepper.querySelectorAll('.grid > div') : []; showToast('Initiating automated curriculum ingestion & CO extraction...', 'info'); if (cards.length >= 5) { cards[2].className = 'bg-[#EAF2D7] border border-[#A8BC82]/40 rounded-2xl p-2.5 sm:p-3 relative'; cards[2].innerHTML = '<div class="flex items-center justify-between mb-1.5"><span class="text-[9px] font-bold uppercase tracking-wider text-emerald-800">Step 3</span><div class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[10px] font-bold"><svg class="w-3 h-3 stroke-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><p class="text-xs font-bold text-zinc-900">Mapping COs</p><span class="text-[9px] text-emerald-800 font-medium block mt-0.5">Bloom L4-L6 Verified</span>'; cards[3].className = 'bg-[#FCE8E6] border-2 border-[#F9B7CE] rounded-2xl p-2.5 sm:p-3 relative shadow-xs'; cards[3].innerHTML = '<div class="flex items-center justify-between mb-1.5"><span class="text-[9px] font-bold uppercase tracking-wider text-[#A62758]">Step 4</span><div class="w-5 h-5 rounded-full bg-[#F5A3BE] text-zinc-950 flex items-center justify-center text-[10px] font-bold animate-spin"><svg class="w-3 h-3 stroke-zinc-950" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><p class="text-xs font-bold text-zinc-900">Checking compliance</p><span class="text-[9px] text-[#C64977] font-bold block mt-0.5">Validating ABET Cri-3...</span>'; setTimeout(() => { cards[3].className = 'bg-[#EAF2D7] border border-[#A8BC82]/40 rounded-2xl p-2.5 sm:p-3 relative'; cards[3].innerHTML = '<div class="flex items-center justify-between mb-1.5"><span class="text-[9px] font-bold uppercase tracking-wider text-emerald-800">Step 4</span><div class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[10px] font-bold"><svg class="w-3 h-3 stroke-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><p class="text-xs font-bold text-zinc-900">Checking compliance</p><span class="text-[9px] text-emerald-800 font-medium block mt-0.5">Full Compliance 100%</span>'; cards[4].className = 'bg-[#EAF2D7] border border-[#A8BC82]/40 rounded-2xl p-2.5 sm:p-3 relative'; cards[4].innerHTML = '<div class="flex items-center justify-between mb-1.5"><span class="text-[9px] font-bold uppercase tracking-wider text-emerald-800">Step 5</span><div class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[10px] font-bold"><svg class="w-3 h-3 stroke-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div><p class="text-xs font-bold text-zinc-900">Done</p><span class="text-[9px] text-emerald-800 font-medium block mt-0.5">Spec Generated &amp; Signed</span>'; isPipelineRunning = false; showToast('Curriculum specification generated successfully!', 'success'); }, 1400); } };const generateCta = document.getElementById('generateSpecCta'); if (generateCta) { generateCta.addEventListener('click', () => { window.togglePipelineSim(); }); }/* Stage Inspector Drawer Click Handlers */const stageMetadata = [ { step: 'STEP 1', title: 'File Ingestion & Parsing', desc: 'Normalized raw document formats (.docx/.pdf) into clean UTF-8 text structures.', algo: 'AST-Parser v2.1', units: '6 Modules', conf: '100%' }, { step: 'STEP 2', title: 'Curriculum Template Selection', desc: 'Identified accredited Tier-1 Engineering Core Syllabus template from Senate guidelines.', algo: 'TemplateMatcher', units: '5 Semesters', conf: '99.1%' }, { step: 'STEP 3', title: 'Bloom Taxonomy Verb Extraction', desc: 'Parsed action verbs (Analyze, Evaluate, Synthesize) according to Revised Bloom Taxonomy.', algo: 'Bloom-RoBERTa', units: '5 CO Definitions', conf: '96.8%' }, { step: 'STEP 4', title: 'ABET Criteria 3 Compliance', desc: 'Cross-referenced course outcomes against Program Outcomes (PO1 to PO12).', algo: 'OBE-Matrix Solver', units: '12 Program Outcomes', conf: '97.5%' }, { step: 'STEP 5', title: 'Spec Finalization & Artifact Output', desc: 'Synthesized verified syllabi specification ready for departmental board signoff.', algo: 'SpecForge Synthesizer', units: 'Final Spec Doc', conf: '99.9%' } ];const stepperCards = document.querySelectorAll('#pipelineStepperSection .grid > div'); stepperCards.forEach((c, idx) => { c.classList.add('cursor-pointer', 'transition', 'hover:scale-[1.02]'); c.addEventListener('click', () => { const drawer = document.getElementById('stageDrawer'); const data = stageMetadata[idx] || stageMetadata[0]; if (!drawer) return; document.getElementById('drawerBadge').textContent = data.step; document.getElementById('drawerTitle').textContent = data.title; document.getElementById('drawerDesc').textContent = data.desc; document.getElementById('drawerAlgo').textContent = data.algo; document.getElementById('drawerUnits').textContent = data.units; document.getElementById('drawerConfidence').textContent = data.conf; drawer.classList.remove('translate-x-full'); showToast('Inspecting: ' + data.title, 'info'); }); });const closeDrawerBtn = document.getElementById('closeDrawerBtn'); const closeDrawerFooterBtn = document.getElementById('closeDrawerFooterBtn'); if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', () => document.getElementById('stageDrawer').classList.add('translate-x-full')); if (closeDrawerFooterBtn) closeDrawerFooterBtn.addEventListener('click', () => document.getElementById('stageDrawer').classList.add('translate-x-full'));/* Settings Modal Triggers & Logic */const settingsModal = document.getElementById('settingsModal'); document.querySelectorAll('a[href="#"]').forEach(a => { if (a.textContent.trim().toLowerCase() === 'settings') { a.addEventListener('click', (e) => { e.preventDefault(); if (settingsModal) settingsModal.classList.remove('hidden'); }); } });const closeSettingsBtn = document.getElementById('closeSettingsBtn'); if (closeSettingsBtn) closeSettingsBtn.addEventListener('click', () => settingsModal.classList.add('hidden'));document.querySelectorAll('.provider-btn').forEach(btn => { btn.addEventListener('click', function() { document.querySelectorAll('.provider-btn').forEach(b => { b.className = 'provider-btn px-3 py-2 rounded-xl border border-[#E5DECD] bg-white text-zinc-700 hover:bg-zinc-100 text-xs font-semibold flex items-center justify-center gap-1 cursor-pointer'; }); this.className = 'provider-btn px-3 py-2 rounded-xl border border-zinc-900 bg-zinc-900 text-white text-xs font-semibold flex items-center justify-center gap-1 cursor-pointer'; showToast('Provider switched to: ' + this.getAttribute('data-provider'), 'info'); }); });const eyeBtn = document.getElementById('togglePasswordVisibility'); const keyInput = document.getElementById('apiKeyInput'); if (eyeBtn && keyInput) { eyeBtn.addEventListener('click', () => { keyInput.type = keyInput.type === 'password' ? 'text' : 'password'; }); }const testKeyBtn = document.getElementById('testKeyBtn'); if (testKeyBtn) { testKeyBtn.addEventListener('click', () => { showToast('Testing connection to model endpoint...', 'info'); setTimeout(() => { showToast('Key validated! Latency: 18ms', 'success'); }, 700); }); }const clearKeyBtn = document.getElementById('clearKeyBtn'); if (clearKeyBtn) { clearKeyBtn.addEventListener('click', () => { if (keyInput) keyInput.value = ''; showToast('API key cleared from local state', 'warn'); }); }const saveKeyBtn = document.getElementById('saveKeyBtn'); if (saveKeyBtn) { saveKeyBtn.addEventListener('click', () => { settingsModal.classList.add('hidden'); showToast('Settings saved successfully', 'success'); }); }/* Calendar Agenda & Events Button Handlers */const calendarAgendaBtn = document.querySelector('aside[data-purpose="calendar-and-schedule"] button:last-of-type'); if (calendarAgendaBtn) { calendarAgendaBtn.addEventListener('click', () => { showToast('Loading full May 2024 academic syllabus agenda...', 'info'); }); }const addEventBtn = document.querySelector('aside[data-purpose="calendar-and-schedule"] button.flex-1'); if (addEventBtn) { addEventBtn.addEventListener('click', () => { showToast('Open outcome/milestone modal...', 'info'); }); }document.querySelectorAll('aside[data-purpose="calendar-and-schedule"] .grid-cols-7 span, aside[data-purpose="calendar-and-schedule"] .grid-cols-7 div').forEach(day => { day.classList.add('cursor-pointer'); day.addEventListener('click', function() { const dayNum = this.textContent.trim(); showToast('Selected academic calendar date: May ' + dayNum, 'info'); }); });
+}
+{
+
+  __sfReady( () => {
+    const cards = document.querySelectorAll('.bento-card');
+    let activeCardId = null;
+
+    function resetCards() {
+      activeCardId = null;
+      cards.forEach(card => {
+        card.classList.remove('is-expanded', 'is-dimmed', 'ring-2', 'ring-zinc-900/30', 'shadow-xl');
+        
+        // Restore default column spans
+        const defaultCol = card.getAttribute('data-default-col');
+        card.className = card.className.replace(/lg:col-span-\d+/g, '').trim();
+        card.classList.add(defaultCol);
+
+        // Hide badges
+        const badge = card.querySelector('.card-badge');
+        if (badge) badge.classList.add('hidden');
+
+        // Reset icon to expand icon
+        const path = card.querySelector('.expand-icon-path');
+        if (path) {
+          path.setAttribute('d', 'M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7');
+        }
+      });
+    }
+
+    function expandCard(card) {
+      const cardId = card.getAttribute('data-card-id');
+
+      // If already active, clicking again collapses it
+      if (activeCardId === cardId) {
+        resetCards();
+        return;
+      }
+
+      activeCardId = cardId;
+
+      cards.forEach(c => {
+        const cId = c.getAttribute('data-card-id');
+        const defaultCol = c.getAttribute('data-default-col');
+        c.className = c.className.replace(/lg:col-span-\d+/g, '').trim();
+
+        const badge = c.querySelector('.card-badge');
+        const path = c.querySelector('.expand-icon-path');
+
+        if (cId === cardId) {
+          c.classList.remove('is-dimmed');
+          c.classList.add('is-expanded', 'ring-2', 'ring-zinc-900/30', 'shadow-xl');
+          c.classList.add('lg:col-span-12'); // Take full width prominence in grid
+          if (badge) badge.classList.remove('hidden');
+          if (path) {
+            // Collapse cross icon '✕'
+            path.setAttribute('d', 'M18 6L6 18M6 6l12 12');
+          }
+        } else {
+          c.classList.remove('is-expanded', 'ring-2', 'ring-zinc-900/30', 'shadow-xl');
+          c.classList.add('is-dimmed');
+          // For inactive cards, distribute compactly
+          c.classList.add('lg:col-span-4');
+          if (badge) badge.classList.add('hidden');
+          if (path) {
+            path.setAttribute('d', 'M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7');
+          }
+        }
+      });
+    }
+
+    // Attach click listeners to cards and their toggle buttons
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Prevent click if clicking direct action links inside expanded area
+        if (e.target.closest('button:not(.toggle-btn)') || e.target.closest('a')) {
+          return;
+        }
+        expandCard(card);
+      });
+    });
+
+    // Clicking outside the grid closes any open card
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#bentoGrid')) {
+        if (activeCardId !== null) {
+          resetCards();
+        }
+      }
+    });
+
+    // Allow Esc key to contract cards
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && activeCardId !== null) {
+        resetCards();
+      }
+    });
+  });
+
+}
